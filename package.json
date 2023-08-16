@@ -1,0 +1,22 @@
+{
+  "name": "verus-rest-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tommyfpedersen/verus-rest-api.git"
+  },
+  "author": "Tommy Faldt Pedersen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tommyfpedersen/verus-rest-api/issues"
+  },
+  "homepage": "https://github.com/tommyfpedersen/verus-rest-api#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
