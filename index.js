@@ -7,6 +7,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 const fetch = require('cross-fetch');
+const btoa = require('btoa');
 
 //const fetch = require('node-fetch');
 
