@@ -26,7 +26,7 @@ app.get('/getmininginfo', (req, res) => {
   })
     .then(response => {
       if (response.ok) {
-        console.log(jsonData);
+        console.log(response);
         return res.json(response);
       }
       console.log({ message: "Request failed!" });
@@ -48,7 +48,7 @@ app.get('/getdifficulty', (req, res) => {
   })
     .then(response => {
       if (response.ok) {
-        console.log(jsonData);
+        console.log(response);
         return res.json(response);
       }
       console.log({ message: "Request failed!" });
