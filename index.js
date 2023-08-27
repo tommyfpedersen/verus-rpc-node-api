@@ -2,6 +2,8 @@
 require('dotenv').config();
 const RPC_USERNAME = process.env.RPC_USERNAME; // <--- Change to your own verus node username 
 const RPC_PASSWORD = process.env.RPC_PASSWORD; // <--- Change to your own verus node password 
+const VERUS_NODE_ADDRESS = 'http://127.0.0.1:27486/'; // <--- Default ip and port number
+const ID = "verus-rest-api-v1.0.0";
 
 /* express */
 const express = require('express');
@@ -11,7 +13,7 @@ const PORT = process.env.PORT || 3000;
 const fetch = require('cross-fetch');
 const btoa = require('btoa');
 
-//const ID = "verus-rest-api-1.0.0";
+
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
@@ -19,13 +21,13 @@ app.get('/', (req, res) => {
 
 
 app.get('/getmininginfo', (req, res) => {
-  fetch('http://127.0.0.1:27486/', {
+  fetch(VERUS_NODE_ADDRESS, {
     method: 'POST',
     headers: {
       'content-type': 'text/plain;',
       'Authorization': 'Basic ' + btoa(RPC_USERNAME + ':' + RPC_PASSWORD)
     },
-    body: '{"jsonrpc": "1.0", "id":"curltest", "method": "getmininginfo", "params": [] }'
+    body: '{"jsonrpc": "1.0", "id":"'+ID+'", "method": "getmininginfo", "params": [] }'
   })
     .then(response => {
       if (response.ok) {
@@ -42,13 +44,13 @@ app.get('/getmininginfo', (req, res) => {
 })
 
 app.get('/getaddressbalance', (req, res) => {
-  fetch('http://127.0.0.1:27486/', {
+  fetch(VERUS_NODE_ADDRESS, {
     method: 'POST',
     headers: {
       'content-type': 'text/plain;',
       'Authorization': 'Basic ' + btoa(RPC_USERNAME + ':' + RPC_PASSWORD)
     },
-    body: '{"jsonrpc": "1.0", "id":"curltest", "method": "getaddressbalance", "params": [{"addresses": ["RCdXBieidGuXmK8Tw2gBoXWxi16UgqyKc7"]}] }'
+    body: '{"jsonrpc": "1.0", "id":"'+ID+'", "method": "getaddressbalance", "params": [{"addresses": ["RCdXBieidGuXmK8Tw2gBoXWxi16UgqyKc7"]}] }'
   })
     .then(response => {
       if (response.ok) {
@@ -65,13 +67,13 @@ app.get('/getaddressbalance', (req, res) => {
 })
 
 app.get('/getdifficulty', (req, res) => {
-  fetch('http://127.0.0.1:27486/', {
+  fetch(VERUS_NODE_ADDRESS, {
     method: 'POST',
     headers: {
       'content-type': 'text/plain;',
       'Authorization': 'Basic ' + btoa(RPC_USERNAME + ':' + RPC_PASSWORD)
     },
-    body: '{"jsonrpc": "1.0", "id":"curltest", "method": "getdifficulty", "params": [] }'
+    body: '{"jsonrpc": "1.0", "id":"'+ID+'", "method": "getdifficulty", "params": [] }'
   })
     .then(response => {
       if (response.ok) {
