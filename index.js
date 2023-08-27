@@ -48,11 +48,14 @@ app.get('/getdifficulty', (req, res) => {
   })
     .then(response => {
       if (response.ok) {
-        console.log(response);
         return res.json(response);
       }
       console.log({ message: "Request failed!" });
       res.json({ message: "Request failed!" })
+    })
+    .then(data => {
+      console.log(data)
+      res.json(data)
     })
     .catch(error => {
       console.error(error);
