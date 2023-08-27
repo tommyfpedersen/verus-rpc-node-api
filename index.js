@@ -22,7 +22,7 @@ app.get('/getmininginfo', (req, res) => {
       'content-type': 'text/plain;',
       'Authorization': 'Basic ' + btoa(RPC_USERNAME + ':' + RPC_PASSWORD)
     },
-    body: '{"jsonrpc": "1.0", "id":"curltest", "method": "getmininginfo", "params": [{"addresses": ["RCdXBieidGuXmK8Tw2gBoXWxi16UgqyKc7"]}] }'
+    body: '{"jsonrpc": "1.0", "id":"curltest", "method": "getaddressbalance", "params": [{"addresses": ["RCdXBieidGuXmK8Tw2gBoXWxi16UgqyKc7"]}] }'
   })
     .then(response => {
       if (response.ok) {
