@@ -26,20 +26,39 @@ app.get('/getmininginfo', (req, res) => {
   })
     .then(response => {
       if (response.ok) {
+        console.log(jsonData);
         return res.json(response);
       }
       console.log({ message: "Request failed!" });
       res.json({ message: "Request failed!" })
-
-    })
-    .then(jsonData => {
-      console.log(jsonData);
     })
     .catch(error => {
       console.error(error);
     });
-  // res.send('getmininginfo')
 })
+
+app.get('/getdifficulty', (req, res) => {
+  fetch('http://127.0.0.1:27486/', {
+    method: 'POST',
+    headers: {
+      'content-type': 'text/plain;',
+      'Authorization': 'Basic ' + btoa(RPC_USERNAME + ':' + RPC_PASSWORD)
+    },
+    body: '{"jsonrpc": "1.0", "id":"curltest", "method": "getdifficulty", "params": [] }'
+  })
+    .then(response => {
+      if (response.ok) {
+        console.log(jsonData);
+        return res.json(response);
+      }
+      console.log({ message: "Request failed!" });
+      res.json({ message: "Request failed!" })
+    })
+    .catch(error => {
+      console.error(error);
+    });
+})
+
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`)
