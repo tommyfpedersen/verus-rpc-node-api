@@ -11,11 +11,37 @@ const PORT = process.env.PORT || 3000;
 const fetch = require('cross-fetch');
 const btoa = require('btoa');
 
+//const ID = "verus-rest-api-1.0.0";
+
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
+
 app.get('/getmininginfo', (req, res) => {
+  fetch('http://127.0.0.1:27486/', {
+    method: 'POST',
+    headers: {
+      'content-type': 'text/plain;',
+      'Authorization': 'Basic ' + btoa(RPC_USERNAME + ':' + RPC_PASSWORD)
+    },
+    body: '{"jsonrpc": "1.0", "id":"curltest", "method": "getmininginfo", "params": [] }'
+  })
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      }
+      res.json({ message: "Request failed!" })
+    })
+    .then(data => {
+      res.json(data)
+    })
+    .catch(error => {
+      res.json({ message: "Request failed! - " + error })
+    });
+})
+
+app.get('/getaddressbalance', (req, res) => {
   fetch('http://127.0.0.1:27486/', {
     method: 'POST',
     headers: {
@@ -26,14 +52,15 @@ app.get('/getmininginfo', (req, res) => {
   })
     .then(response => {
       if (response.ok) {
-        console.log(response);
-        return res.json(response);
+        return response.json();
       }
-      console.log({ message: "Request failed!" });
       res.json({ message: "Request failed!" })
     })
+    .then(data => {
+      res.json(data)
+    })
     .catch(error => {
-      console.error(error);
+      res.json({ message: "Request failed! - " + error })
     });
 })
 
@@ -50,15 +77,13 @@ app.get('/getdifficulty', (req, res) => {
       if (response.ok) {
         return response.json();
       }
-      console.log({ message: "Request failed!" });
       res.json({ message: "Request failed!" })
     })
     .then(data => {
-      console.log(data)
       res.json(data)
     })
     .catch(error => {
-      console.error(error);
+      res.json({ message: "Request failed! - " + error })
     });
 })
 
