@@ -11,17 +11,16 @@ A running Verus Node
 2. Clone or download this repository
 3. Find the rpc_user and rpc_password in VRSC.conf
 
-    windows: %appdata%\Komodo\VRSC 
-    linux: ~/.komodo/VRSC
-    macOS: ~/Library/Application Support/Komodo/VRSC
+  - windows: %appdata%\Komodo\VRSC 
+  - linux: ~/.komodo/VRSC
+  - macOS: ~/Library/Application Support/Komodo/VRSC
+  - https://wiki.verus.io/#!faq-windows/winfaq-03_verus_desktop_locations.md
 
-https://wiki.verus.io/#!faq-windows/winfaq-03_verus_desktop_locations.md
-4. change the config.js variables with your rpc_user and rpc_password 
-5. Optional: Add your own .env file with with your rpc_user and rpc_password 
+4. change the config.js variables with your rpc_user and rpc_password
+5. Optional: Add your own .env file with with your rpc_user and rpc_password
 6. Run NPM install
 7. Run node index.js
 8. Open your browser and go to the page http://localhost:3000/ and e.g http://localhost:3000/mining/getmininginfo
-
 
 # Options available to the Verus RPC client.
 https://wiki.verus.io/#!faq-cli/clifaq-02_verus_commands.md
