@@ -9,7 +9,11 @@ A running Verus Node
 # Setup 
 1. Install and run Verus CLI Wallet / Verus Desktop App
 2. Clone or download this repository
-3. Find the rpc_user and rpc_password - https://wiki.verus.io/#!faq-windows/winfaq-03_verus_desktop_locations.md
+3. Find the rpc_user and rpc_password - 
+windows: %appdata%\Komodo\VRSC 
+linux: ~/.komodo/VRSC
+macOS: ~/Library/Application Support/Komodo/VRSC
+https://wiki.verus.io/#!faq-windows/winfaq-03_verus_desktop_locations.md
 4. change the config.js variables with your rpc_user and rpc_password 
 5. Optional: Add your own .env file with with your rpc_user and rpc_password 
 6. Run NPM install
