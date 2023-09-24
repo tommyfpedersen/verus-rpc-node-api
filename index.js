@@ -7,12 +7,8 @@ const PORT = process.env.PORT || 3000;
 const cors = require('cors');
 app.use(express.json());
 app.use(cors({
-    origin: '*'
+    origin: '*' // <-- which domains can access this API
 }));
-
-/* common */
-const fetch = require('cross-fetch');
-const btoa = require('btoa');
 
 /* routes */
 const addressindexRouter = require('./routes/addressindex');
@@ -31,10 +27,3 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`)
 })
-
-/* mongodb */
-// const mongoose = require('mongoose');
-// mongoose.connect(process.env.DATABASE_URL);
-// const db = mongoose.connection;
-// db.on('error',(error) => console.error(error));
-// db.once('open',() => console.log("Connected to Database"))
