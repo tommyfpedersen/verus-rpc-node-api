@@ -27,7 +27,7 @@ router.get('/getmininginfo', async (req, res) => {
               'content-type': 'text/plain;',
               'Authorization': 'Basic ' + btoa(config.RPC_USERNAME + ':' + config.RPC_PASSWORD)
             },
-            body: '{"jsonrpc": "1.0", "id":"'+config.ID+'", "method": "getblockubsidy", "params": [{"addresses": ["'+req.params.height+'"]}] }'
+            body: '{"jsonrpc": "1.0", "id":"'+config.ID+'", "method": "getblocksubsidy", "params": ['+req.params.height+'] }'
           });
          const results = await response.json();
          res.json(results);
