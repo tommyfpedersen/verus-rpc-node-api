@@ -3,7 +3,7 @@ require('dotenv').config();
 /* express */
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 9009;
 const cors = require('cors');
 app.use(express.json());
 app.use(cors({
@@ -13,6 +13,9 @@ app.use(cors({
 /* routes */
 const addressindexRouter = require('./routes/addressindex');
 app.use('/addressindex', addressindexRouter);
+
+const blockchainRouter = require('./routes/blockchain');
+app.use('/blockchain', blockchainRouter);
 
 const miningRouter = require('./routes/mining');
 app.use('/mining', miningRouter);
