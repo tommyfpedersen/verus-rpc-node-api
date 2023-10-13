@@ -20,6 +20,9 @@ app.use('/blockchain', blockchainRouter);
 const miningRouter = require('./routes/mining');
 app.use('/mining', miningRouter);
 
+const multichainRouter = require('./routes/multichain');
+app.use('/multichain', multichainRouter);
+
 const networkRouter = require('./routes/network');
 app.use('/network', networkRouter);
 
