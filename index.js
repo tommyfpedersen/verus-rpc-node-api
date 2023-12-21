@@ -17,6 +17,9 @@ app.use('/addressindex', addressindexRouter);
 const blockchainRouter = require('./routes/blockchain');
 app.use('/blockchain', blockchainRouter);
 
+const identityRouter = require('./routes/identity');
+app.use('/identity', identityRouter);
+
 const miningRouter = require('./routes/mining');
 app.use('/mining', miningRouter);
 
