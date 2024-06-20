@@ -1,7 +1,7 @@
 # verus-rest-api
-Free to use Verus node express REST API framework. 
+Free to use Verus node express RPC API framework. 
 
-Useful for Javascript developers and can be used as a base REST API for your dapps.
+Useful for Javascript developers and can be used as a base RPC API for your dApps.
 
 # Requirements 
 A running Verus Node
