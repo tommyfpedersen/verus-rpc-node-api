@@ -1,4 +1,4 @@
-# verus-rest-api
+# verus-rpc-node-api
 Free to use Verus node express RPC API framework. 
 
 Useful for Javascript developers and can be used as a base RPC API for your dApps.
